@@ -1,6 +1,6 @@
 //
 //  CAAnimation+Blocks.m
-//  MeninoMaluquinho
+//  CAAnimationBlocks
 //
 //  Created by xissburg on 7/7/11.
 //  Copyright 2011 xissburg. All rights reserved.
