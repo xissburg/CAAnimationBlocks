@@ -1,16 +1,16 @@
 //
-//  CAAnimationBlocksAppDelegate.m
-//  CAAnimationBlocks
+//  AppDelegate.m
+//  AppDelegate
 //
 //  Created by xissburg on 7/16/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 xissburg. All rights reserved.
 //
 
-#import "CAAnimationBlocksAppDelegate.h"
+#import "AppDelegate.h"
 
-#import "CAAnimationBlocksViewController.h"
+#import "RootViewController.h"
 
-@implementation CAAnimationBlocksAppDelegate
+@implementation AppDelegate
 
 
 @synthesize window=_window;

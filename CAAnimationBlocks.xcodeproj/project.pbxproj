@@ -12,16 +12,19 @@
 		1B1E968413D163F80042033F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1E968313D163F80042033F /* CoreGraphics.framework */; };
 		1B1E968A13D163F80042033F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E968813D163F80042033F /* InfoPlist.strings */; };
 		1B1E968D13D163F80042033F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E968C13D163F80042033F /* main.m */; };
-		1B1E969013D163F80042033F /* CAAnimationBlocksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E968F13D163F80042033F /* CAAnimationBlocksAppDelegate.m */; };
+		1B1E969013D163F80042033F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E968F13D163F80042033F /* AppDelegate.m */; };
 		1B1E969313D163F80042033F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E969113D163F80042033F /* MainWindow.xib */; };
-		1B1E969613D163F80042033F /* CAAnimationBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E969513D163F80042033F /* CAAnimationBlocksViewController.m */; };
-		1B1E969913D163F80042033F /* CAAnimationBlocksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E969713D163F80042033F /* CAAnimationBlocksViewController.xib */; };
+		1B1E969613D163F80042033F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E969513D163F80042033F /* RootViewController.m */; };
+		1B1E969913D163F80042033F /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E969713D163F80042033F /* RootViewController.xib */; };
 		1B1E96A013D163F80042033F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1E967F13D163F80042033F /* UIKit.framework */; };
 		1B1E96A113D163F80042033F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1E968113D163F80042033F /* Foundation.framework */; };
 		1B1E96A213D163F80042033F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1E968313D163F80042033F /* CoreGraphics.framework */; };
 		1B1E96AA13D163F80042033F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E96A813D163F80042033F /* InfoPlist.strings */; };
 		1B1E96AD13D163F80042033F /* CAAnimationBlocksTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E96AC13D163F80042033F /* CAAnimationBlocksTests.h */; };
 		1B1E96AF13D163F80042033F /* CAAnimationBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E96AE13D163F80042033F /* CAAnimationBlocksTests.m */; };
+		1B1E96BA13D164140042033F /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E96B913D164140042033F /* CAAnimation+Blocks.m */; };
+		1B1E96BC13D1642A0042033F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1E96BB13D1642A0042033F /* QuartzCore.framework */; };
+		1B1E96BE13D164B20042033F /* raccoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E96BD13D164B20042033F /* raccoon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,22 +42,26 @@
 		1B1E967F13D163F80042033F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1B1E968113D163F80042033F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B1E968313D163F80042033F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1B1E968713D163F80042033F /* CAAnimationBlocks-Info.plist */ = {isa = PBXFileReference; path = "CAAnimationBlocks-Info.plist"; sourceTree = "<group>"; };
+		1B1E968713D163F80042033F /* CAAnimationBlocks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CAAnimationBlocks-Info.plist"; sourceTree = "<group>"; };
 		1B1E968913D163F80042033F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1B1E968B13D163F80042033F /* CAAnimationBlocks-Prefix.pch */ = {isa = PBXFileReference; path = "CAAnimationBlocks-Prefix.pch"; sourceTree = "<group>"; };
+		1B1E968B13D163F80042033F /* CAAnimationBlocks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAAnimationBlocks-Prefix.pch"; sourceTree = "<group>"; };
 		1B1E968C13D163F80042033F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1B1E968E13D163F80042033F /* CAAnimationBlocksAppDelegate.h */ = {isa = PBXFileReference; path = CAAnimationBlocksAppDelegate.h; sourceTree = "<group>"; };
-		1B1E968F13D163F80042033F /* CAAnimationBlocksAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAAnimationBlocksAppDelegate.m; sourceTree = "<group>"; };
+		1B1E968E13D163F80042033F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1B1E968F13D163F80042033F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1B1E969213D163F80042033F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		1B1E969413D163F80042033F /* CAAnimationBlocksViewController.h */ = {isa = PBXFileReference; path = CAAnimationBlocksViewController.h; sourceTree = "<group>"; };
-		1B1E969513D163F80042033F /* CAAnimationBlocksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAAnimationBlocksViewController.m; sourceTree = "<group>"; };
-		1B1E969813D163F80042033F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CAAnimationBlocksViewController.xib; sourceTree = "<group>"; };
+		1B1E969413D163F80042033F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1B1E969513D163F80042033F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		1B1E969813D163F80042033F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		1B1E969F13D163F80042033F /* CAAnimationBlocksTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CAAnimationBlocksTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B1E96A713D163F80042033F /* CAAnimationBlocksTests-Info.plist */ = {isa = PBXFileReference; path = "CAAnimationBlocksTests-Info.plist"; sourceTree = "<group>"; };
+		1B1E96A713D163F80042033F /* CAAnimationBlocksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CAAnimationBlocksTests-Info.plist"; sourceTree = "<group>"; };
 		1B1E96A913D163F80042033F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1B1E96AB13D163F80042033F /* CAAnimationBlocksTests-Prefix.pch */ = {isa = PBXFileReference; path = "CAAnimationBlocksTests-Prefix.pch"; sourceTree = "<group>"; };
+		1B1E96AB13D163F80042033F /* CAAnimationBlocksTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAAnimationBlocksTests-Prefix.pch"; sourceTree = "<group>"; };
 		1B1E96AC13D163F80042033F /* CAAnimationBlocksTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAnimationBlocksTests.h; sourceTree = "<group>"; };
 		1B1E96AE13D163F80042033F /* CAAnimationBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAAnimationBlocksTests.m; sourceTree = "<group>"; };
+		1B1E96B813D164140042033F /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
+		1B1E96B913D164140042033F /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
+		1B1E96BB13D1642A0042033F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1B1E96BD13D164B20042033F /* raccoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raccoon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1E96BC13D1642A0042033F /* QuartzCore.framework in Frameworks */,
 				1B1E968013D163F80042033F /* UIKit.framework in Frameworks */,
 				1B1E968213D163F80042033F /* Foundation.framework in Frameworks */,
 				1B1E968413D163F80042033F /* CoreGraphics.framework in Frameworks */,
@@ -103,6 +111,7 @@
 		1B1E967E13D163F80042033F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B1E96BB13D1642A0042033F /* QuartzCore.framework */,
 				1B1E967F13D163F80042033F /* UIKit.framework */,
 				1B1E968113D163F80042033F /* Foundation.framework */,
 				1B1E968313D163F80042033F /* CoreGraphics.framework */,
@@ -113,12 +122,14 @@
 		1B1E968513D163F80042033F /* CAAnimationBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				1B1E968E13D163F80042033F /* CAAnimationBlocksAppDelegate.h */,
-				1B1E968F13D163F80042033F /* CAAnimationBlocksAppDelegate.m */,
+				1B1E96B813D164140042033F /* CAAnimation+Blocks.h */,
+				1B1E96B913D164140042033F /* CAAnimation+Blocks.m */,
+				1B1E968E13D163F80042033F /* AppDelegate.h */,
+				1B1E968F13D163F80042033F /* AppDelegate.m */,
 				1B1E969113D163F80042033F /* MainWindow.xib */,
-				1B1E969413D163F80042033F /* CAAnimationBlocksViewController.h */,
-				1B1E969513D163F80042033F /* CAAnimationBlocksViewController.m */,
-				1B1E969713D163F80042033F /* CAAnimationBlocksViewController.xib */,
+				1B1E969413D163F80042033F /* RootViewController.h */,
+				1B1E969513D163F80042033F /* RootViewController.m */,
+				1B1E969713D163F80042033F /* RootViewController.xib */,
 				1B1E968613D163F80042033F /* Supporting Files */,
 			);
 			path = CAAnimationBlocks;
@@ -127,6 +138,7 @@
 		1B1E968613D163F80042033F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1B1E96BD13D164B20042033F /* raccoon.png */,
 				1B1E968713D163F80042033F /* CAAnimationBlocks-Info.plist */,
 				1B1E968813D163F80042033F /* InfoPlist.strings */,
 				1B1E968B13D163F80042033F /* CAAnimationBlocks-Prefix.pch */,
@@ -224,7 +236,8 @@
 			files = (
 				1B1E968A13D163F80042033F /* InfoPlist.strings in Resources */,
 				1B1E969313D163F80042033F /* MainWindow.xib in Resources */,
-				1B1E969913D163F80042033F /* CAAnimationBlocksViewController.xib in Resources */,
+				1B1E969913D163F80042033F /* RootViewController.xib in Resources */,
+				1B1E96BE13D164B20042033F /* raccoon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1E968D13D163F80042033F /* main.m in Sources */,
-				1B1E969013D163F80042033F /* CAAnimationBlocksAppDelegate.m in Sources */,
-				1B1E969613D163F80042033F /* CAAnimationBlocksViewController.m in Sources */,
+				1B1E969013D163F80042033F /* AppDelegate.m in Sources */,
+				1B1E969613D163F80042033F /* RootViewController.m in Sources */,
+				1B1E96BA13D164140042033F /* CAAnimation+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +315,12 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		1B1E969713D163F80042033F /* CAAnimationBlocksViewController.xib */ = {
+		1B1E969713D163F80042033F /* RootViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1B1E969813D163F80042033F /* en */,
 			);
-			name = CAAnimationBlocksViewController.xib;
+			name = RootViewController.xib;
 			sourceTree = "<group>";
 		};
 		1B1E96A813D163F80042033F /* InfoPlist.strings */ = {
