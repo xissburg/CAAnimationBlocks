@@ -1,0 +1,4 @@
+Category which allows the usage of start and completion blocks in CAAnimation instances, instead of an unpractical delegate.
+
+To use it in your project, just add the CAAnimation+Blocks.h and CAAnimation+Blocks.m files. In RootViewController.m you can find out how to use it. Just assign a void ^(BOOL) block to the completion property of the CAAnimation instance. You can also assign a start block of the form void ^(void).
+
