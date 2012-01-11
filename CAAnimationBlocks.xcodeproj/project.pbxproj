@@ -376,6 +376,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CAAnimationBlocks/CAAnimationBlocks-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "CAAnimationBlocks/CAAnimationBlocks-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -389,6 +390,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CAAnimationBlocks/CAAnimationBlocks-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "CAAnimationBlocks/CAAnimationBlocks-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
@@ -461,6 +463,7 @@
 				1B1E96B413D163F80042033F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B1E96B513D163F80042033F /* Build configuration list for PBXNativeTarget "CAAnimationBlocksTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +472,7 @@
 				1B1E96B713D163F80042033F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

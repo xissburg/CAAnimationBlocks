@@ -61,6 +61,9 @@
 
 - (void)runAnimation:(id)unused
 {
+    // Create a shaking animation that rotates a bit counter clockwisely and then rotates another
+    // bit clockwisely and repeats. Basically, add a new rotation animation in the opposite
+    // direction at the completion of each rotation animation.
     const CGFloat duration = 0.1f;
     const CGFloat angle = 0.03f;
     NSNumber *angleR = [NSNumber numberWithFloat:angle];
@@ -71,7 +74,7 @@
     
     void (^completionR)(BOOL) = ^(BOOL finished) {
         [self.imageView.layer setValue:angleL forKey:@"transform.rotation.z"];
-        [self.imageView.layer addAnimation:animationL forKey:@"L"];
+        [self.imageView.layer addAnimation:animationL forKey:@"L"]; // Add rotation animation in the opposite direction.
     };
     
     void (^completionL)(BOOL) = ^(BOOL finished) {
@@ -82,18 +85,20 @@
     animationL.fromValue = angleR;
     animationL.toValue = angleL;
     animationL.duration = duration;
-    animationL.completion = completionL;
+    animationL.completion = completionL; // Set completion to perform rotation in opposite direction upon completion.
     
     animationR.fromValue = angleL;
     animationR.toValue = angleR;
     animationR.duration = duration;
     animationR.completion = completionR;
     
+    // First animation performs half rotation and then proceeds to enter the loop by playing animationL in its completion block
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     animation.fromValue = [NSNumber numberWithFloat:0.f];
     animation.toValue = angleR;
     animation.duration = duration/2;
     animation.completion = completionR;
+    
     [self.imageView.layer setValue:angleR forKey:@"transform.rotation.z"];
     [self.imageView.layer addAnimation:animation forKey:@"0"];
 }
