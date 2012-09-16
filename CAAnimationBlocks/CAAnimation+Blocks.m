@@ -78,7 +78,8 @@
 {
     CAAnimationDelegate *newDelegate = [[CAAnimationDelegate alloc] init];
     newDelegate.completion = completion;
-    newDelegate.start = ((CAAnimationDelegate *)self.delegate).start;
+    if ([self.delegate isKindOfClass:[CAAnimationDelegate class]])
+         newDelegate.start = ((CAAnimationDelegate *)self.delegate).start;
     self.delegate = newDelegate;
     [newDelegate release];
 }
@@ -95,7 +96,8 @@
 {
     CAAnimationDelegate *newDelegate = [[CAAnimationDelegate alloc] init];
     newDelegate.start = start;
-    newDelegate.completion = ((CAAnimationDelegate *)self.delegate).completion;
+    if ([self.delegate isKindOfClass:[CAAnimationDelegate class]])
+        newDelegate.completion = ((CAAnimationDelegate *)self.delegate).completion;
     self.delegate = newDelegate;
     [newDelegate release];
 }
