@@ -68,7 +68,7 @@
 -  (BOOL)delegateCheck
 {
     if (self.delegate != nil && ![self.delegate isKindOfClass:[CAAnimationDelegate class]]) {
-        NSLog(@"CAAnimation(BlocksAddition) Warning: CAAnimation instance's delegate was modified externally");
+        NSLog(@"CAAnimation(BlocksAddition) Warning: CAAnimation instance's delegate was set externally");
         return NO;
     }
     return YES;
@@ -78,8 +78,7 @@
 {
     CAAnimationDelegate *newDelegate = [[CAAnimationDelegate alloc] init];
     newDelegate.completion = completion;
-    if ([self.delegate isKindOfClass:[CAAnimationDelegate class]])
-         newDelegate.start = ((CAAnimationDelegate *)self.delegate).start;
+    newDelegate.start = [self start];
     self.delegate = newDelegate;
     [newDelegate release];
 }
@@ -96,8 +95,7 @@
 {
     CAAnimationDelegate *newDelegate = [[CAAnimationDelegate alloc] init];
     newDelegate.start = start;
-    if ([self.delegate isKindOfClass:[CAAnimationDelegate class]])
-        newDelegate.completion = ((CAAnimationDelegate *)self.delegate).completion;
+    newDelegate.completion = [self completion];
     self.delegate = newDelegate;
     [newDelegate release];
 }
