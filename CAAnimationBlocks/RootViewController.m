@@ -13,11 +13,12 @@
 
 @implementation RootViewController
 
-@synthesize imageView;
+@synthesize imageView, anotherImageView;
 
 - (void)dealloc
 {
     self.imageView = nil;
+    self.anotherImageView = nil;
     [super dealloc];
 }
 
@@ -31,7 +32,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.imageView.layer.shadowOffset = CGSizeMake(0, 4);
     self.imageView.layer.shadowRadius = 7;
     self.imageView.layer.shadowOpacity = 0.7;
@@ -41,6 +41,7 @@
 {
     [super viewDidUnload];
     self.imageView = nil;
+    self.anotherImageView = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -96,6 +97,20 @@
     
     [self.imageView.layer setValue:angleR forKey:@"transform.rotation.z"];
     [self.imageView.layer addAnimation:animation forKey:@"0"];
+    
+    // Setup another animation just to show a different coding style
+    CABasicAnimation *anotherAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
+    anotherAnimation.fromValue = [NSNumber numberWithFloat:self.anotherImageView.layer.position.x];
+    anotherAnimation.toValue = [NSNumber numberWithFloat:600];
+    anotherAnimation.duration = 2;
+    [anotherAnimation setCompletion:^(BOOL finished) {
+        CABasicAnimation *oneMoreAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
+        oneMoreAnimation.fromValue = [NSNumber numberWithFloat:600];
+        oneMoreAnimation.toValue = [NSNumber numberWithFloat:160];
+        oneMoreAnimation.duration = 1;
+        [self.anotherImageView.layer addAnimation:oneMoreAnimation forKey:@"1"];
+    }];
+    [self.anotherImageView.layer addAnimation:anotherAnimation forKey:@"1"];
 }
 
 @end

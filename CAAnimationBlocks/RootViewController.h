@@ -13,5 +13,6 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet UIImageView *anotherImageView;
 
 @end
