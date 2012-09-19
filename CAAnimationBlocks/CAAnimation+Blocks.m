@@ -7,7 +7,6 @@
 //
 
 #import "CAAnimation+Blocks.h"
-#import <objc/objc-class.h>
 
 
 @interface CAAnimationDelegate : NSObject
@@ -61,33 +60,16 @@
 
 @implementation CAAnimation (BlocksAddition)
 
-+ (void)load
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Method originalMethod = class_getInstanceMethod([self class], @selector(setDelegate:));
-        Method newMethod = class_getInstanceMethod([self class], @selector(_setDelegate:));
-        method_exchangeImplementations(originalMethod, newMethod);
-    });
-}
-
-- (void)_setDelegate:(id)delegate
-{
-    NSAssert([delegate isKindOfClass:[CAAnimationDelegate class]], @"CAAnimationBlocks: Do not set the delegate, use the start and completion blocks instead. Or, remove the CAAnimation+Blocks.h/m from your project.");
-    [self _setDelegate:delegate];
-}
-
 - (void)setCompletion:(void (^)(BOOL))completion
 {
-    if (self.delegate == nil) {
+    if ([self.delegate isKindOfClass:[CAAnimationDelegate class]]) {
+        ((CAAnimationDelegate *)self.delegate).completion = completion;
+    }
+    else {
         CAAnimationDelegate *delegate = [[CAAnimationDelegate alloc] init];
         delegate.completion = completion;
         self.delegate = delegate;
         [delegate release];
-    }
-    else {
-        CAAnimationDelegate *delegate = (CAAnimationDelegate *)self.delegate;
-        delegate.completion = completion;
     }
 }
 
@@ -98,15 +80,14 @@
 
 - (void)setStart:(void (^)(void))start
 {
-    if (self.delegate == nil) {
+    if ([self.delegate isKindOfClass:[CAAnimationDelegate class]]) {
+        ((CAAnimationDelegate *)self.delegate).start = start;
+    }
+    else {
         CAAnimationDelegate *delegate = [[CAAnimationDelegate alloc] init];
         delegate.start = start;
         self.delegate = delegate;
         [delegate release];
-    }
-    else {
-        CAAnimationDelegate *delegate = (CAAnimationDelegate *)self.delegate;
-        delegate.start = start;
     }
 }
 
