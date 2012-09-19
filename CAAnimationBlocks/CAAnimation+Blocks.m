@@ -75,7 +75,7 @@
 
 - (void (^)(BOOL))completion
 {
-    return ((CAAnimationDelegate *)self.delegate).completion;
+    return [self.delegate isKindOfClass:[CAAnimationDelegate class]]? ((CAAnimationDelegate *)self.delegate).completion: nil;
 }
 
 - (void)setStart:(void (^)(void))start
@@ -93,7 +93,7 @@
 
 - (void (^)(void))start
 {
-    return ((CAAnimationDelegate *)self.delegate).start;
+    return [self.delegate isKindOfClass:[CAAnimationDelegate class]]? ((CAAnimationDelegate *)self.delegate).start: nil;
 }
 
 @end
