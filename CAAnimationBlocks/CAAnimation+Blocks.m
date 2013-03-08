@@ -24,23 +24,6 @@
 @synthesize completion=_completion;
 @synthesize start=_start;
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.completion = nil;
-        self.start = nil;
-    }
-    return self;
-}
-
-- (void)dealloc
-{
-    self.completion = nil;
-    self.start = nil;
-    [super dealloc];
-}
-
 - (void)animationDidStart:(CAAnimation *)anim
 {
     if (self.start != nil) {
@@ -69,7 +52,6 @@
         CAAnimationDelegate *delegate = [[CAAnimationDelegate alloc] init];
         delegate.completion = completion;
         self.delegate = delegate;
-        [delegate release];
     }
 }
 
@@ -87,7 +69,6 @@
         CAAnimationDelegate *delegate = [[CAAnimationDelegate alloc] init];
         delegate.start = start;
         self.delegate = delegate;
-        [delegate release];
     }
 }
 
