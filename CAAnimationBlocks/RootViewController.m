@@ -13,15 +13,6 @@
 
 @implementation RootViewController
 
-@synthesize imageView, anotherImageView;
-
-- (void)dealloc
-{
-    self.imageView = nil;
-    self.anotherImageView = nil;
-    [super dealloc];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -62,8 +53,8 @@
     // direction at the completion of each rotation animation.
     const CGFloat duration = 0.1f;
     const CGFloat angle = 0.03f;
-    NSNumber *angleR = [NSNumber numberWithFloat:angle];
-    NSNumber *angleL = [NSNumber numberWithFloat:-angle];
+    NSNumber *angleR = @(angle);
+    NSNumber *angleL = @(-angle);
     
     CABasicAnimation *animationL = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     CABasicAnimation *animationR = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
@@ -90,7 +81,7 @@
     
     // First animation performs half rotation and then proceeds to enter the loop by playing animationL in its completion block
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    animation.fromValue = [NSNumber numberWithFloat:0.f];
+    animation.fromValue = @0.f;
     animation.toValue = angleR;
     animation.duration = duration/2;
     animation.completion = completionR;
@@ -100,13 +91,13 @@
     
     // Setup another animation just to show a different coding style
     CABasicAnimation *anotherAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
-    anotherAnimation.fromValue = [NSNumber numberWithFloat:self.anotherImageView.layer.position.x];
-    anotherAnimation.toValue = [NSNumber numberWithFloat:600];
+    anotherAnimation.fromValue = @(self.anotherImageView.layer.position.x);
+    anotherAnimation.toValue = @600;
     anotherAnimation.duration = 2;
     [anotherAnimation setCompletion:^(BOOL finished) {
         CABasicAnimation *oneMoreAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
-        oneMoreAnimation.fromValue = [NSNumber numberWithFloat:600];
-        oneMoreAnimation.toValue = [NSNumber numberWithFloat:160];
+        oneMoreAnimation.fromValue = @600;
+        oneMoreAnimation.toValue = @160;
         oneMoreAnimation.duration = 1;
         [self.anotherImageView.layer addAnimation:oneMoreAnimation forKey:@"1"];
     }];

@@ -21,9 +21,6 @@
 
 @implementation CAAnimationDelegate
 
-@synthesize completion=_completion;
-@synthesize start=_start;
-
 - (void)animationDidStart:(CAAnimation *)anim
 {
     if (self.start != nil) {
